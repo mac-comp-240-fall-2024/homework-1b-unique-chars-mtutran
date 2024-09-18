@@ -1,5 +1,9 @@
 /*
- * TODO: Add an appropriate descriptive comment here
+ * test.c
+ * 
+ * The main program contains tests of the hasUniqueChars function.
+ * 
+ * Author: Tu Tran
  */
 
 #include <stdio.h>    // printf
@@ -49,16 +53,38 @@ int main() {
   ok = hasUniqueChars(string3);
   assert(ok);
   
-  // TODO: add your tests here
+  // Additional tests for hasUniqueChars()
+  // Empty string, this should return true.
+  strcpy(string3, "");
+  ok = hasUniqueChars(string3);
+  assert(ok);
 
+  // String with spaces only, this should return true.
+  strcpy(string3, "   ");
+  ok = hasUniqueChars(string3);
+  assert(ok);
 
+  // String with all unique characters, this should return true.
+  strcpy(string3, "asdfghjkl");
+  ok = hasUniqueChars(string3);
+  assert(ok);
+
+  // String with all unique characters and has spaces in between, this should return true.
+  strcpy(string3, "asd fgh jkl");
+  ok = hasUniqueChars(string3);
+  assert(ok);
+
+  // String with duplicate characters, this should return false.
+  strcpy(string3, "aasdfghjkl");
+  ok = hasUniqueChars(string3);
+  assert(!(ok));
 
   // NOTE: if you add a \n to any tests, this should cause the
   //       exit failure given. Keep this test last so you can check 
   //       that others pass or fail as you expect them to.
   strcpy(string3, "a b cc\n");
   ok = hasUniqueChars(string3);
-  // other examples that should fail that you can place in strings
+// other examples that should fail that you can place in strings
   // are \0 or \t or \r
   // See problem description for more details about escape sequences
   
