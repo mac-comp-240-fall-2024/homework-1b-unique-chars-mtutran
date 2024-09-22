@@ -79,11 +79,21 @@ int main() {
   ok = hasUniqueChars(string3);
   assert(!(ok));
 
+  // A sentence with multiple duplicate characters, this should return false.
+  strcpy(string3, "This is a classic problem.");
+  ok = hasUniqueChars(string3);
+  assert(!(ok));
+
+  // A sentence with no duplicate characters, this should return true.
+  strcpy(string3, "I'm 20 years old.");
+  ok = hasUniqueChars(string3);
+  assert(ok);
+
   // NOTE: if you add a \n to any tests, this should cause the
   //       exit failure given. Keep this test last so you can check 
   //       that others pass or fail as you expect them to.
-  strcpy(string3, "a b cc\n");
-  ok = hasUniqueChars(string3);
+  // strcpy(string3, "a b cc\n");
+  // ok = hasUniqueChars(string3);
 // other examples that should fail that you can place in strings
   // are \0 or \t or \r
   // See problem description for more details about escape sequences

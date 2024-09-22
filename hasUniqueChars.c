@@ -83,13 +83,11 @@ bool hasUniqueChars(char * inputStr) {
       }
       checkBitsA_z = checkBitsA_z | bitPosition;
     } else if (nextChar >= 33 && nextChar <= 64) {
-      unsigned long bitPosition = (nextChar - 33);
+      unsigned long bitPosition = 1 << (nextChar - 33);
       if (checkBitsexcl_amp & bitPosition) {
         return false;
       }
       checkBitsexcl_amp = checkBitsexcl_amp | bitPosition;
-    } else {
-      return false;
     }
   }
 
